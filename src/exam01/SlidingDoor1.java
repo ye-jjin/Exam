@@ -47,6 +47,7 @@ public class SlidingDoor1 {
 				}
 			}
 		}
+		
 		System.out.println("arrEnd에서 findNum이 위치하고 있는 위치:["+chRow+"] , ["+chCol+"]");
 		
 		// arrEnd[row][col] 값과 arrEnd[chRow][chCol] 값 바꾸기
@@ -101,7 +102,8 @@ public class SlidingDoor1 {
 			System.out.println("최종이동횟수:"+count);
 			System.out.println("====================================");
 		}
-
+		
+		
 	}//main
 
 }//SlidingDoor1
