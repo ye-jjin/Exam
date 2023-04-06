@@ -1,12 +1,9 @@
 package exam01;
 
-import java.sql.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
-public class SlidingDoor2 {
+public class SlidingDoor3 {
 	static int row;
 	static int col;
 	static int findNum;
@@ -105,52 +102,7 @@ public class SlidingDoor2 {
 			for(int j= 0; j< arrEnd[0].length; j ++) { // 0 1 2 3
 				intArr[ i * arrEnd[0].length + j] = arrEnd[i][j];
 			}
-		}
-		
-		// 3. arr1에 데이터 정상 입력 - 확인용
-//		for (int i : intArr) {
-//			System.out.print(i + " ");
-//		}
-		
-//		// 조건 2. int 배열 -> String 배열로 변경		
-//		// 1. int 배열의 길이만큼의 String 배열 공간 만들기
-//        String strArr[] = new String[intArr.length];
-//        
-//        // 2. int 배열의 i번째 값을 String 배열의 i번째 값으로 넣기
-//        for (int i = 0; i < intArr.length; i++) {
-//            strArr[i] = String.valueOf(intArr[i]);
-//        }
-//        
-//        // 3. String 배열에 데이터 정상 입력 - 확인용
-//        //System.out.println("String 배열:"+Arrays.toString(strArr));
-//        
-//        // 조건 3. String 배열 ->String 리스트로 변경
-//        List<String> listArr = new ArrayList<>(Arrays.asList(strArr));
-//        
-//        // 조건 4. String 리스트에서 0의 값을 제거
-//        listArr.remove(listArr.indexOf("0"));
-//        System.out.println("listArr: "+listArr);
-//        
-//        // 조건 5. String list -> String 배열로 변경
-//        String strArr2[] = new String[listArr.size()];
-//        strArr2 = listArr.toArray(strArr2);
-//        
-//        // String 배열에 데이터 - 확인용
-//        for (String i : strArr2) {
-//			System.out.print(i + " ");
-//		}
-//        
-//        // 조건 6. String 배열 -> int 배열로 변경
-//        int intArr2[] = new int[strArr2.length];
-//        
-//        for (int i = 0; i < strArr2.length; i++) {
-//        	intArr2[i] = Integer.parseInt(strArr2[i]);
-//        }
-//        
-//        // int 배열 데이터 - 확인용
-//        for (int i : intArr2) {
-//			System.out.print(i + " ");
-//		}
+		}		
         
         //====================================================
         
@@ -168,12 +120,18 @@ public class SlidingDoor2 {
         
        //=====================================================
         
-        //0이 위치한 행 찾기
+        //0이 위치한 행 찾기 --> 위에서부터 찾는 방법
         
-        
-        
-        
-        
+        for(int i=0; i<arrEnd.length; i++){
+            for(int j=0; j<arrEnd[i].length; j++){
+                if( arrEnd[i][j] == 0) {
+                	row = i;
+                	col = j;
+                	System.out.println("arrEnd에서 0이 위치한 행: ["+row+"]");
+                }
+            }
+        }
+                
         
        //===================================================== 
         
@@ -185,15 +143,15 @@ public class SlidingDoor2 {
         	//역전 카운트 수가 짝수이면
         	if(countInversion % 2 == 0) {
         		//알고리즘 정상 실행
-        		while(result) {			
-        			moveNum(arrEnd, arrStart, row, col, findNum,chRow,chCol);
-        			
-        			if(Arrays.deepEquals(arrStart, arrEnd)) {
-        				result=false; //break문
-        			}			
-        			System.out.println("최종이동횟수:"+count);
-        			System.out.println("====================================");
-        		}
+//        		while(result) {			
+//        			moveNum(arrEnd, arrStart, row, col, findNum,chRow,chCol);
+//        			
+//        			if(Arrays.deepEquals(arrStart, arrEnd)) {
+//        				result=false; //break문
+//        			}			
+//        			System.out.println("최종이동횟수:"+count);
+//        			System.out.println("====================================");
+//        		}
         	}//역전 카운트 수가 홀수이면
         	else if(countInversion % 2 == 1) {
         		//안내문구 출력
@@ -227,5 +185,4 @@ public class SlidingDoor2 {
 		
 	}//main
 
-}//SlidingDoor2
-
+}//SlidingDoor3
