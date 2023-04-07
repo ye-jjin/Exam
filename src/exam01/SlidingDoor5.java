@@ -81,7 +81,9 @@ public class SlidingDoor5 {
 	       	for(int i=0;i<num;i++) {
 	       		for(int j=0; j<num; j++) {
 	       			if(arrEnd[i][j]!=arrEnd1[i][j]) {
-	       				count1 += 1;
+	       				count1++;
+	       			}else {
+	       				break;
 	       			}
 	       		}
 	       	}
@@ -113,12 +115,15 @@ public class SlidingDoor5 {
 	               }
 	            System.out.println(); //->배열의 공간 할당
 	        }
+	       System.out.println(arrEnd[0][0]+","+arrEnd2[0][0]);	
 	       	
 	      //기존의 타깃배열(arrEnd)-한번옮긴배열(arrEnd2) 비교하기
 	       	for(int i=0;i<num;i++) {
 	       		for(int j=0; j<num; j++) {
 	       			if(arrEnd[i][j]!=arrEnd2[i][j]) {
-	       				count2 += 1;
+	       				count2++;
+	       			}else {
+	       				break;
 	       			}
 	       		}
 	       	}
@@ -148,14 +153,16 @@ public class SlidingDoor5 {
 	               for (int j = 0; j < leftArr.length; j++) {
 	                   System.out.print(leftArr[j] + " ");
 	               }
-	            System.out.println(); //->배열의 공간 할당
+	        System.out.println(); //->배열의 공간 할당
 	        }
 	       	
 	      //기존의 타깃배열(arrEnd)-한번옮긴배열(arrEnd3) 비교하기
 	       	for(int i=0;i<num; i++) {
 	       		for(int j=0; j<num; j++) {
 	       			if(arrEnd[i][j]!=arrEnd3[i][j]) {
-	       				count3 += 1;
+	       				count3++;
+	       			}else {
+	       				break;
 	       			}
 	       		}
 	       	}
@@ -193,8 +200,10 @@ public class SlidingDoor5 {
 	
        	for(int i=0;i<num;i++) {
        		for(int j=0; j<num; j++) {
-       			if(arrEnd[i][j]!=arrEnd[i][j]) {
-       				count4 += 1;
+       			if(arrEnd[i][j]!=arrEnd4[i][j]) {
+       				count4++;
+       			}else {
+       				break;
        			}
        		}
        	}
